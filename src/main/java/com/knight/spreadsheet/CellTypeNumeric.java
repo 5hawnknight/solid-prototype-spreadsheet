@@ -3,6 +3,10 @@ package com.knight.spreadsheet;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 
+/**
+ * @author Shawn Knight (shawn.knight.work@gmail.com)
+ *
+ */
 public class CellTypeNumeric implements CellType
 {
 	public boolean isTypeMatch(Cell cell)

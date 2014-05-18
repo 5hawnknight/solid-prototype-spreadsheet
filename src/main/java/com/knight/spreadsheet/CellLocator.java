@@ -4,9 +4,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 /**
- * @author Shawn Knight
- * 
- *
+ * @author Shawn Knight (shawn.knight.work@gmail.com)
  */
 public class CellLocator
 {

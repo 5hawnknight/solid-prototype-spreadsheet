@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.poi.ss.usermodel.Cell;
 
 /**
- * @author shawnknight
+ * @author Shawn Knight (shawn.knight.work@gmail.com)
  *
  */
 public class CellReader

@@ -7,7 +7,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 /**
- * @author shawnknight
+ * @author Shawn Knight (shawn.knight.work@gmail.com)
  *
  */
 public class RowReader

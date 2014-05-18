@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- * @author shawnknight
+ * @author Shawn Knight (shawn.knight.work@gmail.com)
  *
  */
 public class SpreadSheetReader implements Reader
@@ -51,7 +51,6 @@ public class SpreadSheetReader implements Reader
 
 	public Map<String, String> getData()
 	{
-		System.out.println(sheet.toString());
 		Row row = new RowLocator(sheet).locateRowBy(sequence);
 		return new RowReader(sheet).readRow(row);
 	}
