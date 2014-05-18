@@ -2,35 +2,57 @@ package com.knight.spreadsheet;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Map;
-
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class SpreadSheetReader 
+/**
+ * @author shawnknight
+ *
+ */
+public class SpreadSheetReader implements Reader
 {
 	private XSSFWorkbook workbook;
 	private XSSFSheet sheet;
-	
+	private String sequence;
+
 	public SpreadSheetReader()
+	{
+		workbook = new XSSFWorkbook();
+		sheet = workbook.createSheet().createRow(0).createCell(0).getSheet();
+	}
+
+	public SpreadSheetReader withWorkBookLocation(String file)
 	{
 		try
 		{
-			//URL url = getClass().getClassLoader().getResource(System.getProperty("spreadsheet"));
-			//FileInputStream file = new FileInputStream(new File(url.toURI().getPath()));
-			//this.workbook = new XSSFWorkbook(path)
-			this.workbook = new XSSFWorkbook(new FileInputStream(new File("src/test/resources/spreadsheet.xlsx")));
-		} 
-		catch (Exception e)
-		{
-			this.workbook = new XSSFWorkbook();
+			this.workbook = new XSSFWorkbook(
+					new FileInputStream(new File(file)));
 		}
-		this.sheet = workbook.getSheetAt(0);
+		catch (NullPointerException | IOException npe) { }
+		return this;
 	}
-	public Map<String, String> getData(String jiraIssue)
-	{		
-		Row row = new RowLocator(sheet).locateRowBy(jiraIssue);
+
+	public SpreadSheetReader withSheetName(String name)
+	{
+		this.sheet = ObjectUtils.defaultIfNull(workbook.getSheet(name),
+		workbook.createSheet().createRow(0).createCell(0).getSheet());
+		return this;
+	}
+
+	public SpreadSheetReader withRowSequence(String sequence)
+	{
+		this.sequence = sequence;
+		return this;
+	}
+
+	public Map<String, String> getData()
+	{
+		System.out.println(sheet.toString());
+		Row row = new RowLocator(sheet).locateRowBy(sequence);
 		return new RowReader(sheet).readRow(row);
 	}
 }

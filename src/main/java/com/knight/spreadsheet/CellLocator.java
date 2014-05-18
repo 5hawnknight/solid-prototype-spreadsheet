@@ -3,9 +3,15 @@ package com.knight.spreadsheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-public class CellLocator {
+/**
+ * @author Shawn Knight
+ * 
+ *
+ */
+public class CellLocator
+{
 
-	public Cell getCell(Row row, int column) 
+	public Cell getCell(Row row, int column)
 	{
 		return row.getCell(column);
 	}
