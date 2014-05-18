@@ -29,8 +29,7 @@ public class SpreadSheetReader implements Reader
 	{
 		try
 		{
-			this.workbook = new XSSFWorkbook(
-					new FileInputStream(new File(file)));
+			this.workbook = new XSSFWorkbook(new FileInputStream(new File(file)));
 		}
 		catch (NullPointerException | IOException npe) { }
 		return this;
@@ -38,8 +37,7 @@ public class SpreadSheetReader implements Reader
 
 	public SpreadSheetReader withSheetName(String name)
 	{
-		this.sheet = ObjectUtils.defaultIfNull(workbook.getSheet(name),
-		workbook.createSheet().createRow(0).createCell(0).getSheet());
+		this.sheet = ObjectUtils.defaultIfNull(workbook.getSheet(name),workbook.createSheet().createRow(0).createCell(0).getSheet());
 		return this;
 	}
 

@@ -15,8 +15,7 @@ public class CellReader
 
 	public CellReader()
 	{
-		cellTypes = Arrays.asList(new CellTypeNumeric(), new CellTypeString(),
-				new CellTypeBlank(), new CellTypeError());
+		cellTypes = Arrays.asList(new CellTypeNumeric(), new CellTypeString(), new CellTypeBlank(), new CellTypeError());
 	}
 
 	public String getValue(Cell cell)

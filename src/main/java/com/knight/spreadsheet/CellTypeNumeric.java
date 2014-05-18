@@ -16,7 +16,6 @@ public class CellTypeNumeric implements CellType
 
 	public String getCellValue(Cell cell)
 	{
-		return StringUtils.trimToEmpty(Double.toString(cell
-				.getNumericCellValue()));
+		return StringUtils.trimToEmpty(Double.toString(cell.getNumericCellValue()));
 	}
 }
