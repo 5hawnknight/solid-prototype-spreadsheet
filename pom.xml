@@ -5,15 +5,18 @@
 	<artifactId>solid-prototype-spreadsheet</artifactId>
 	<version>1.0</version>
 	<name>solid-prototype-spreadsheet</name>
-	<scm>
-		<developerConnection>Shawn Knight</developerConnection>
-		<tag>shawn.knight.work@gmail.com</tag>
-	</scm>
+
+	<developers>
+		<developer>
+			<name>Shawn Knight</name>
+			<email>shawn.knight.work@gmail.com</email>
+		</developer>
+	</developers>
+	
 	<properties>
 		<apache.poi.version>3.10-FINAL</apache.poi.version>
 		<apache.commons.version>3.0</apache.commons.version>
 	</properties>
-	
 	
 	<dependencies>
 		<dependency>
