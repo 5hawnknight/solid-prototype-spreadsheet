@@ -25,28 +25,32 @@ public class SpreadSheetReader implements Reader
 		sheet = workbook.createSheet().createRow(0).createCell(0).getSheet();
 	}
 
+	@Override
 	public SpreadSheetReader withWorkBookLocation(String file)
 	{
 		try
 		{
 			this.workbook = new XSSFWorkbook(new FileInputStream(new File(file)));
 		}
-		catch (NullPointerException | IOException npe) { }
+		catch (NullPointerException | IOException npe) { /*TODO: add logging */}
 		return this;
 	}
 
+	@Override
 	public SpreadSheetReader withSheetName(String name)
 	{
 		this.sheet = ObjectUtils.defaultIfNull(workbook.getSheet(name),workbook.createSheet().createRow(0).createCell(0).getSheet());
 		return this;
 	}
 
+	@Override
 	public SpreadSheetReader withRowSequence(String sequence)
 	{
 		this.sequence = sequence;
 		return this;
 	}
 
+	@Override
 	public Map<String, String> getData()
 	{
 		Row row = new RowLocator(sheet).locateRowBy(sequence);

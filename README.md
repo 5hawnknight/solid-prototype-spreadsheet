@@ -1,4 +1,4 @@
 solid-prototype-spreadsheet
 ===========================
 
-- Designed based on the builder pattern
+- Design based on the builder pattern

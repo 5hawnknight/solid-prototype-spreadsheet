@@ -32,10 +32,10 @@ public class RowLocator
 			if (StringUtils.equalsIgnoreCase(searchValue, cellValue))
 				return row;
 		}
-		return getBlankRow();
+		return emptyRow();
 	}
 
-	private Row getBlankRow()
+	private Row emptyRow()
 	{
 		return sheet.getRow(sheet.getLastRowNum());
 	}
