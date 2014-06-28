@@ -16,6 +16,7 @@
 	<properties>
 		<apache.poi.version>3.10-FINAL</apache.poi.version>
 		<apache.commons.version>3.0</apache.commons.version>
+		<java.version>1.7</java.version>
 	</properties>
 	
 	<dependencies>
@@ -35,4 +36,16 @@
 			<version>${apache.commons.version}</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
